@@ -63,6 +63,18 @@
   <ItemGroup>
     <Compile Include="Business\ClsCategory.cs" />
     <Compile Include="DataAccess\Clsdal.cs" />
+    <Compile Include="Presntaiton\Category\AddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presntaiton\Category\AddCategory.Designer.cs">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presntaiton\Dilg\dilo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presntaiton\Dilg\dilo.Designer.cs">
+      <DependentUpon>dilo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presntaiton\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +83,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presntaiton\Category\AddCategory.resx">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presntaiton\Dilg\dilo.resx">
+      <DependentUpon>dilo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presntaiton\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

@@ -81,7 +81,40 @@ namespace LibMang.Presntaiton
 
         private void homeBtn_Click(object sender, EventArgs e)
         {
+            state = "home";
+            HomePanel.Visible = true;
+            mainPanel.Visible = false;
+            topLb.Text = "Home";
+        }
 
+        private void addCategoryBtn_Click(object sender, EventArgs e)
+        {
+            AddCategory addCategory = new AddCategory();
+            addCategory.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if(state == "category")
+            {
+                AddCategory addCategory = new AddCategory();
+                addCategory.Show();
+            }
+        }
+
+        private void Main_Activated(object sender, EventArgs e)
+        {
+            if(state == "category")
+            {
+                try
+                {
+                    categoryGridView.DataSource = clsCategory.load();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

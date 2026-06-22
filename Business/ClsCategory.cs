@@ -20,5 +20,16 @@ namespace LibMang.Business
             dt = dal.read("loadCategory", par);
             return dt;
         }
+
+
+        public void addCategory(string categoryName)
+        {
+            SqlParameter[] par = new SqlParameter[1];
+            par[0] = new SqlParameter("categoryname", categoryName);
+
+            dal.open();
+            dal.Excute("addcategory",par);
+            dal.close();
+        }
     }
 }

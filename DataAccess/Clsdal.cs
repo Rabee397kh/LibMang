@@ -62,7 +62,7 @@ namespace LibMang.DataAccess
             if(par != null) {
                 command.Parameters.AddRange(par);
             }
-
+            
             command.ExecuteNonQuery();
         }
     }
