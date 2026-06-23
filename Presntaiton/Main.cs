@@ -1,4 +1,5 @@
 ﻿using LibMang.Business;
+using LibMang.Presntaiton.Dilg;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -89,15 +90,17 @@ namespace LibMang.Presntaiton
 
         private void addCategoryBtn_Click(object sender, EventArgs e)
         {
-            AddCategory addCategory = new AddCategory();
+            string st = "add";
+            AddCategory addCategory = new AddCategory(st);
             addCategory.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if(state == "category")
+            string st = "add";
+            if (state == "category")
             {
-                AddCategory addCategory = new AddCategory();
+                AddCategory addCategory = new AddCategory(st);
                 addCategory.Show();
             }
         }
@@ -114,6 +117,41 @@ namespace LibMang.Presntaiton
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            string st = "edit";
+            if(state == "category")
+            {
+                
+                id = (int)categoryGridView.CurrentRow.Cells[0].Value;
+                AddCategory addCategory = new AddCategory(st,id);
+                addCategory.Show();
+
+               
+
+            }
+        }
+
+       
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            //if (MessageBox.Show("Are you sure?", "Deletion", MessageBoxButtons.YesNo,
+            //       MessageBoxIcon.Warning) == DialogResult.No)
+            //{
+
+            //    return;
+
+            //}
+            if (state == "category")
+            {
+                id = Convert.ToInt32(categoryGridView.CurrentRow.Cells["id"].Value);
+                //MessageBox.Show(categoryGridView.CurrentRow.Cells["id"].Value.ToString());
+                clsCategory.deleteCategory(id);
+                dilo dil = new dilo("Deleted",state);
+                dil.Show();
             }
         }
     }

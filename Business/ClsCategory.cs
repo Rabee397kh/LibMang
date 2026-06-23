@@ -31,5 +31,28 @@ namespace LibMang.Business
             dal.Excute("addcategory",par);
             dal.close();
         }
+
+
+        public void editCategory(string categoryName , int categoryId)
+        {
+            SqlParameter[] pars = new SqlParameter[2];
+            pars[0] = new SqlParameter("categoryname", categoryName);
+            pars[1] = new SqlParameter("categoryid", categoryId);
+
+            dal.open();
+            dal.Excute("editCategory", pars);
+            dal.close();
+        }
+
+        public void deleteCategory(int id)
+        {
+            SqlParameter[] par = new SqlParameter[1];
+            par[0] = new SqlParameter("id", id);
+
+            dal.open();
+            dal.Excute("deleteCategory",par);
+            dal.close();
+                
+        }
     }
 }
