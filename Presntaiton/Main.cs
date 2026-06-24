@@ -1,4 +1,5 @@
 ﻿using LibMang.Business;
+using LibMang.Presntaiton.Books;
 using LibMang.Presntaiton.Dilg;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace LibMang.Presntaiton
         string state = "";
         int id = 0;
         ClsCategory clsCategory = new ClsCategory();
+        ClsBook clsBook = new ClsBook();
         public Main()
         {
             InitializeComponent();
@@ -70,7 +72,7 @@ namespace LibMang.Presntaiton
 
             try
             {
-                categoryGridView.DataSource = clsCategory.load();
+                subjectGridView.DataSource = clsCategory.load();
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -102,6 +104,11 @@ namespace LibMang.Presntaiton
             {
                 AddCategory addCategory = new AddCategory(st);
                 addCategory.Show();
+            }else if(state == "Books")
+            {
+                AddBook addBook = new AddBook();
+                //bunifuTransition1.ShowSync(addBook);
+                addBook.Show();
             }
         }
 
@@ -111,7 +118,17 @@ namespace LibMang.Presntaiton
             {
                 try
                 {
-                    categoryGridView.DataSource = clsCategory.load();
+                    subjectGridView.DataSource = clsCategory.load();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }else if(state == "Books")
+            {
+                try
+                {
+                    subjectGridView.DataSource = clsBook.load();
                 }
                 catch (Exception ex)
                 {
@@ -126,7 +143,7 @@ namespace LibMang.Presntaiton
             if(state == "category")
             {
                 
-                id = (int)categoryGridView.CurrentRow.Cells[0].Value;
+                id = (int)subjectGridView.CurrentRow.Cells[0].Value;
                 AddCategory addCategory = new AddCategory(st,id);
                 addCategory.Show();
 
@@ -147,12 +164,43 @@ namespace LibMang.Presntaiton
             //}
             if (state == "category")
             {
-                id = Convert.ToInt32(categoryGridView.CurrentRow.Cells["id"].Value);
+                id = Convert.ToInt32(subjectGridView.CurrentRow.Cells["id"].Value);
                 //MessageBox.Show(categoryGridView.CurrentRow.Cells["id"].Value.ToString());
                 clsCategory.deleteCategory(id);
                 dilo dil = new dilo("Deleted",state);
                 dil.Show();
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if(state == "category")
+                   subjectGridView.DataSource = clsCategory.getResult(textBox1.Text);
+        }
+
+        private void BookBtn_Click(object sender, EventArgs e)
+        {
+            state = "Books";
+            HomePanel.Visible = false;
+            mainPanel.Visible = true;
+            topLb.Text = state;
+
+            try
+            {
+                subjectGridView.DataSource = clsBook.load();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void addBookBtn_Click(object sender, EventArgs e)
+        {
+            AddBook addBook = new AddBook();
+            //bunifuTransition1.ShowSync(addBook);
+            addBook.Show();
         }
     }
 }

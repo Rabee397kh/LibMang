@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="bunifu">
+      <HintPath>..\..\Users\MXT\Desktop\winform-ui-library\bunifu.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -61,8 +64,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\ClsBook.cs" />
     <Compile Include="Business\ClsCategory.cs" />
     <Compile Include="DataAccess\Clsdal.cs" />
+    <Compile Include="Presntaiton\Books\AddBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presntaiton\Books\AddBook.Designer.cs">
+      <DependentUpon>AddBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presntaiton\Category\AddCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +93,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presntaiton\Books\AddBook.resx">
+      <DependentUpon>AddBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presntaiton\Category\AddCategory.resx">
       <DependentUpon>AddCategory.cs</DependentUpon>
     </EmbeddedResource>

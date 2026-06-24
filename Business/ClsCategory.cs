@@ -54,5 +54,13 @@ namespace LibMang.Business
             dal.close();
                 
         }
+
+        public DataTable getResult(string userinput) {
+            SqlParameter[] par = new SqlParameter[1];
+            par[0] = new SqlParameter("categoryname", userinput);
+
+            DataTable dt = dal.read("searchCategory", par);
+            return dt;
+        }
     }
 }
