@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation7 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBook));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.bookNameTxt = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bookPriceNu = new System.Windows.Forms.NumericUpDown();
+            this.categoryCombo = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.authorTxt = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.categoryCombo = new System.Windows.Forms.ComboBox();
+            this.bookNameTxt = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.addCoverLink = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bookRating = new Bunifu.Framework.UI.BunifuRating();
+            this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.bookRating = new Bunifu.Framework.UI.BunifuRating();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.addBookBtn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.title = new System.Windows.Forms.Label();
-            this.bookPriceNu = new System.Windows.Forms.NumericUpDown();
-            this.addCoverLink = new System.Windows.Forms.LinkLabel();
             this.closeBtn = new System.Windows.Forms.Button();
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookPriceNu)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookPriceNu)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -77,24 +77,57 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Important Information";
             // 
-            // label1
+            // bookPriceNu
             // 
-            this.label1.AutoSize = true;
-            this.bunifuTransition1.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
-            this.label1.Location = new System.Drawing.Point(15, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name";
+            this.bunifuTransition1.SetDecoration(this.bookPriceNu, BunifuAnimatorNS.DecorationType.None);
+            this.bookPriceNu.Location = new System.Drawing.Point(137, 373);
+            this.bookPriceNu.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.bookPriceNu.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.bookPriceNu.Name = "bookPriceNu";
+            this.bookPriceNu.Size = new System.Drawing.Size(247, 30);
+            this.bookPriceNu.TabIndex = 8;
+            this.bookPriceNu.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // bookNameTxt
+            // categoryCombo
             // 
-            this.bookNameTxt.BorderColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTransition1.SetDecoration(this.bookNameTxt, BunifuAnimatorNS.DecorationType.None);
-            this.bookNameTxt.Location = new System.Drawing.Point(137, 56);
-            this.bookNameTxt.Name = "bookNameTxt";
-            this.bookNameTxt.Size = new System.Drawing.Size(247, 30);
-            this.bookNameTxt.TabIndex = 1;
+            this.bunifuTransition1.SetDecoration(this.categoryCombo, BunifuAnimatorNS.DecorationType.None);
+            this.categoryCombo.FormattingEnabled = true;
+            this.categoryCombo.Location = new System.Drawing.Point(137, 278);
+            this.categoryCombo.Name = "categoryCombo";
+            this.categoryCombo.Size = new System.Drawing.Size(247, 33);
+            this.categoryCombo.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.bunifuTransition1.SetDecoration(this.label4, BunifuAnimatorNS.DecorationType.None);
+            this.label4.Location = new System.Drawing.Point(15, 378);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 25);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Price";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.bunifuTransition1.SetDecoration(this.label3, BunifuAnimatorNS.DecorationType.None);
+            this.label3.Location = new System.Drawing.Point(15, 278);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 25);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Category";
             // 
             // authorTxt
             // 
@@ -115,34 +148,24 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Author";
             // 
-            // label3
+            // bookNameTxt
             // 
-            this.label3.AutoSize = true;
-            this.bunifuTransition1.SetDecoration(this.label3, BunifuAnimatorNS.DecorationType.None);
-            this.label3.Location = new System.Drawing.Point(15, 278);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 25);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Category";
+            this.bookNameTxt.BorderColor = System.Drawing.Color.SeaGreen;
+            this.bunifuTransition1.SetDecoration(this.bookNameTxt, BunifuAnimatorNS.DecorationType.None);
+            this.bookNameTxt.Location = new System.Drawing.Point(137, 56);
+            this.bookNameTxt.Name = "bookNameTxt";
+            this.bookNameTxt.Size = new System.Drawing.Size(247, 30);
+            this.bookNameTxt.TabIndex = 1;
             // 
-            // label4
+            // label1
             // 
-            this.label4.AutoSize = true;
-            this.bunifuTransition1.SetDecoration(this.label4, BunifuAnimatorNS.DecorationType.None);
-            this.label4.Location = new System.Drawing.Point(15, 378);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 25);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Price";
-            // 
-            // categoryCombo
-            // 
-            this.bunifuTransition1.SetDecoration(this.categoryCombo, BunifuAnimatorNS.DecorationType.None);
-            this.categoryCombo.FormattingEnabled = true;
-            this.categoryCombo.Location = new System.Drawing.Point(137, 278);
-            this.categoryCombo.Name = "categoryCombo";
-            this.categoryCombo.Size = new System.Drawing.Size(247, 33);
-            this.categoryCombo.TabIndex = 7;
+            this.label1.AutoSize = true;
+            this.bunifuTransition1.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
+            this.label1.Location = new System.Drawing.Point(15, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Name";
             // 
             // groupBox2
             // 
@@ -160,6 +183,60 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Secondary";
+            // 
+            // addCoverLink
+            // 
+            this.addCoverLink.AutoSize = true;
+            this.bunifuTransition1.SetDecoration(this.addCoverLink, BunifuAnimatorNS.DecorationType.None);
+            this.addCoverLink.LinkColor = System.Drawing.Color.SeaGreen;
+            this.addCoverLink.Location = new System.Drawing.Point(247, 479);
+            this.addCoverLink.Name = "addCoverLink";
+            this.addCoverLink.Size = new System.Drawing.Size(106, 25);
+            this.addCoverLink.TabIndex = 11;
+            this.addCoverLink.TabStop = true;
+            this.addCoverLink.Text = "Add Cover";
+            this.addCoverLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.addCoverLink_LinkClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bunifuTransition1.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox1.Location = new System.Drawing.Point(135, 249);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(331, 189);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // bookRating
+            // 
+            this.bookRating.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTransition1.SetDecoration(this.bookRating, BunifuAnimatorNS.DecorationType.None);
+            this.bookRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookRating.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bookRating.Location = new System.Drawing.Point(135, 141);
+            this.bookRating.Margin = new System.Windows.Forms.Padding(6);
+            this.bookRating.Name = "bookRating";
+            this.bookRating.Size = new System.Drawing.Size(331, 62);
+            this.bookRating.TabIndex = 9;
+            this.bookRating.Value = 0;
+            // 
+            // bunifuDatepicker1
+            // 
+            this.bunifuDatepicker1.BackColor = System.Drawing.Color.SeaGreen;
+            this.bunifuDatepicker1.BorderRadius = 0;
+            this.bunifuTransition1.SetDecoration(this.bunifuDatepicker1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuDatepicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuDatepicker1.ForeColor = System.Drawing.Color.White;
+            this.bunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.bunifuDatepicker1.FormatCustom = null;
+            this.bunifuDatepicker1.Location = new System.Drawing.Point(135, 56);
+            this.bunifuDatepicker1.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuDatepicker1.Name = "bunifuDatepicker1";
+            this.bunifuDatepicker1.Size = new System.Drawing.Size(331, 44);
+            this.bunifuDatepicker1.TabIndex = 8;
+            this.bunifuDatepicker1.Value = new System.DateTime(2026, 6, 23, 19, 6, 28, 446);
             // 
             // label6
             // 
@@ -192,44 +269,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Publish Date";
             // 
-            // bunifuDatepicker1
-            // 
-            this.bunifuDatepicker1.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuDatepicker1.BorderRadius = 0;
-            this.bunifuTransition1.SetDecoration(this.bunifuDatepicker1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuDatepicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuDatepicker1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.bunifuDatepicker1.FormatCustom = null;
-            this.bunifuDatepicker1.Location = new System.Drawing.Point(135, 56);
-            this.bunifuDatepicker1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.bunifuDatepicker1.Name = "bunifuDatepicker1";
-            this.bunifuDatepicker1.Size = new System.Drawing.Size(331, 44);
-            this.bunifuDatepicker1.TabIndex = 8;
-            this.bunifuDatepicker1.Value = new System.DateTime(2026, 6, 23, 19, 6, 28, 446);
-            // 
-            // bookRating
-            // 
-            this.bookRating.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.bookRating, BunifuAnimatorNS.DecorationType.None);
-            this.bookRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookRating.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bookRating.Location = new System.Drawing.Point(135, 141);
-            this.bookRating.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.bookRating.Name = "bookRating";
-            this.bookRating.Size = new System.Drawing.Size(331, 62);
-            this.bookRating.TabIndex = 9;
-            this.bookRating.Value = 0;
-            // 
-            // pictureBox1
-            // 
-            this.bunifuTransition1.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.pictureBox1.Location = new System.Drawing.Point(135, 249);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(331, 189);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
             // addBookBtn
             // 
             this.addBookBtn.ActiveBorderThickness = 1;
@@ -255,6 +294,7 @@
             this.addBookBtn.Size = new System.Drawing.Size(181, 41);
             this.addBookBtn.TabIndex = 9;
             this.addBookBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.addBookBtn.Click += new System.EventHandler(this.addBookBtn_Click);
             // 
             // bunifuElipse1
             // 
@@ -273,45 +313,11 @@
             this.title.TabIndex = 8;
             this.title.Text = "Add Book";
             // 
-            // bookPriceNu
-            // 
-            this.bunifuTransition1.SetDecoration(this.bookPriceNu, BunifuAnimatorNS.DecorationType.None);
-            this.bookPriceNu.Location = new System.Drawing.Point(137, 373);
-            this.bookPriceNu.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.bookPriceNu.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.bookPriceNu.Name = "bookPriceNu";
-            this.bookPriceNu.Size = new System.Drawing.Size(247, 30);
-            this.bookPriceNu.TabIndex = 8;
-            this.bookPriceNu.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // addCoverLink
-            // 
-            this.addCoverLink.AutoSize = true;
-            this.bunifuTransition1.SetDecoration(this.addCoverLink, BunifuAnimatorNS.DecorationType.None);
-            this.addCoverLink.LinkColor = System.Drawing.Color.SeaGreen;
-            this.addCoverLink.Location = new System.Drawing.Point(247, 479);
-            this.addCoverLink.Name = "addCoverLink";
-            this.addCoverLink.Size = new System.Drawing.Size(106, 25);
-            this.addCoverLink.TabIndex = 11;
-            this.addCoverLink.TabStop = true;
-            this.addCoverLink.Text = "Add Cover";
-            // 
             // closeBtn
             // 
             this.closeBtn.BackgroundImage = global::LibMang.Properties.Resources.close;
             this.closeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTransition1.SetDecoration(this.closeBtn, BunifuAnimatorNS.DecorationType.None);
             this.closeBtn.Location = new System.Drawing.Point(2, -3);
             this.closeBtn.Name = "closeBtn";
@@ -324,22 +330,22 @@
             // 
             this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.Scale;
             this.bunifuTransition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation1;
+            animation7.AnimateOnlyDifferences = true;
+            animation7.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.BlindCoeff")));
+            animation7.LeafCoeff = 0F;
+            animation7.MaxTime = 1F;
+            animation7.MinTime = 0F;
+            animation7.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicCoeff")));
+            animation7.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicShift")));
+            animation7.MosaicSize = 0;
+            animation7.Padding = new System.Windows.Forms.Padding(0);
+            animation7.RotateCoeff = 0F;
+            animation7.RotateLimit = 0F;
+            animation7.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.ScaleCoeff")));
+            animation7.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.SlideCoeff")));
+            animation7.TimeCoeff = 0F;
+            animation7.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation7;
             this.bunifuTransition1.MaxAnimationTime = 5000;
             this.bunifuTransition1.TimeStep = 0.05F;
             // 
@@ -365,10 +371,10 @@
             this.Load += new System.EventHandler(this.AddBook_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookPriceNu)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookPriceNu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
